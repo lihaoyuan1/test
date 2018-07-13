@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习</title>
+		<script>
+			function save(root){
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				if(root.checked){
+					var d = new Date();
+					d.setTime(d.getTime()+24*60*60*1000);
+					var expires = d.toGMTString();
+					document.cookie = "user="+username+"&"+password+";"+expires;
+				}
+				else{
+					var expires = "Thu, 01 Jan 1970 00:00:00 GMT;"
+					document.cookie = "user=;"+expires;
+				}
+			}
+			function search1(){
+				var cookie = document.cookie.split(';');
+				for(var i=0; i<cookie.length; i++){
+					var c = cookie[i].trim();
+					if(c.indexOf("user=") == 0){
+						var result = (c.substring(5,c.length)).split('&');
+						if(result != ""){
+							document.getElementById("username").value = result[0];
+							document.getElementById("password").value = result[1];
+							document.getElementById("checkbox").checked = true;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="search1()">
+		<span>用户名：</span><input type="text" id="username"><br />
+		<span>密&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input type="text" id="password"><br />
+		<input type="checkbox" onclick="save(this)" id="checkbox">记住密码
+		<p id="demo"></p>
+	</body>
+</html>

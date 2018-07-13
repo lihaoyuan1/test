@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		div{
+			text-align: center;
+			line-height: 100px;
+			width: 200px;
+			height: 100px;
+			margin: 35px;
+		}
+		li{
+			float: left;
+			list-style: none;
+		}
+		.box1{
+			background-color: yellow;
+			box-shadow: 10px 10px 5px gray;
+			border-radius: 5px;
+		}
+		.box2{
+			background-image: url(picture/picture2.gif),url(picture/picture1.jpg);
+			background-size: 80px 80px,100% 100%;
+			background-position: right bottom, left top;
+			background-repeat: no-repeat, no-repeat;
+			box-shadow: 3px 3px 0 gray;
+		}
+		.box3{
+			border: 1px solid gray;
+			background-image: url(picture/picture2.gif);
+			background-repeat: no-repeat;
+			background-size: 25px 25px;
+			background-origin: content-box;
+			background-position: left top;
+		}
+		.box4{
+			border: 10px dotted cornflowerblue;
+			padding: 10px;
+			background-color: yellow;
+			background-clip: content-box;
+		}
+		.box5{
+			text-shadow: 5px 5px 1px cornflowerblue;
+			border: 1px solid gainsboro;
+		}
+		.box6{
+			border: 1px solid gray;
+			transition: all 2s;
+		}
+		.box6:hover{
+			transform: rotate(180deg);
+		}
+		.box7{
+			border: 1px solid gray;
+			background-color: red;
+			animation: myFirst 5s;
+			animation-delay: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes myFirst{
+			0%{background-color: red;}
+			25%{background-color: yellow;}
+			50%{background-color: blue;}
+			75%{background-color: green;}
+			100%{background-color: red;}
+		}
+		.box8{
+			border: 1px solid gray;
+			background-color: red;
+			animation: mySecond 5s;
+			position: relative;
+			animation-delay: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes mySecond{
+			0%{background-color: red; left: 0px; top: 0px;}
+			25%{background-color: yellow; left: 100px; top: 0px;}
+			50%{background-color: blue; left: 100px; top: 50px;}
+			75%{background-color: green; left: 0px; top: 50px;}
+			100%{background-color: red; left: 0px; top: 0px;}
+		}
+		.box9{
+			border: 1px solid gray;
+			resize: both;
+			overflow: auto;
+		}
+		.box10 img{
+			width: 100%;
+			height: 100%;
+			padding: 5px;
+			border: 1px solid darkgray;
+			border-radius: 4px;
+		}
+		.box10 img:hover{
+			border-color: dimgray;
+		}
+		.box11{
+			height: auto;
+			line-height: 0;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		}
+		.box11:hover{
+			box-shadow: 0 4px 8px rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.39);
+		}
+		.box11 img{
+			width: 100%;
+			margin: 0;
+		}
+		.box11 .text{
+			margin: 0;
+			height: auto;
+			padding: 10px 5px;
+			line-height: 20px;
+			font-size: 14px;
+		}
+		.box12{
+			border: 1px solid darkgray;
+		}
+		.btn1{
+			border: 2px solid green;
+			border-radius: 5px;
+			padding: 10px 20px;
+			background: none;
+			transition-duration: 0.4s;
+			-webkit-transition-duration: 0.4s;
+			cursor: pointer;
+		}
+		.btn1:hover{
+			background-color: green;
+			color: white;
+		}
+		.btn2{
+			border: 2px solid orange;
+			padding: 7px 12px;
+			background-color: orange;
+			border-radius: 5px;
+			transition-duration: 0.4s;
+			-webkit-transition-duration: 0.4s;
+		}
+		.btn2 span{
+			position: relative;
+			left: 8px;
+			color: white;
+			font-size: 18px;
+			transition-duration: 0.4s;
+			-webkit-transition-duration: 0.4s;
+		}
+		.btn2 span:after{
+			content: ">>";
+			position: relative;
+			left: 2px;
+			color: white;
+			opacity: 0;
+			top: 2px;
+			font-size: 15px;
+		}
+		.btn2:hover span{
+			border-color: orangered;
+			left: 0;
+		}
+		.btn2:hover span:after{
+			opacity: 1;
+		}
+		</style>
+	</head>
+	<body>
+	<li>
+		<div class="box1">box1</div>
+	</li>
+	<li>
+		<div class="box2">box2</div>
+	</li>
+	<li>
+		<div class="box3">box3</div>
+	</li>
+	<li>
+		<div class="box4">box4</div>
+	</li>
+	<li>
+		<div class="box5">Hello World!</div>
+	</li>
+	<li>
+		<div class="box6">Hello World!</div>
+	</li>
+	<li>
+		<div class="box7">Hello World!</div>
+	</li>
+	<li>
+		<div class="box8">Hello World!</div>
+	</li>
+	<li>
+		<div class="box9">Hello World!</div>
+	</li>
+	<li>
+		<div class="box10">
+			<a target="_blank" href="picture/paris.jpg">
+				<img src="picture/paris.jpg">
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class="box11">
+			<img src="picture/rock600x400.jpg" alt="加载失败">
+			<div class="text">
+				<p>The Troll's tongue in Hardanger, Norway</p>
+			</div>
+		</div>
+	</li>
+	<li>
+		<div class="box12">
+			<button class="btn1">Green</button>
+			<button class="btn2"><span>Hover</span></button>
+		</div>
+	</li>
+	</body>
+</html>
